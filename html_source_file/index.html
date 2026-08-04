@@ -25,58 +25,45 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
     <style>
-      .pub-counter-floating {
-        position: fixed;
-        top: 18px;
-        right: 22px;
-        z-index: 1000;
+      .pub-counter-inline {
+        margin: 14px auto 4px auto;
+        padding: 12px 16px;
+        width: fit-content;
         background: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 10px;
-        padding: 10px 14px;
+        border: 1px solid #d8d8d8;
+        border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-        font-size: 13px;
-        line-height: 1.4;
         text-align: center;
       }
     
       .pub-counter-title {
-        font-weight: 600;
-        margin-bottom: 4px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 7px;
         color: #333333;
       }
     
       .pub-counter-items {
         display: flex;
-        gap: 10px;
+        gap: 12px;
         justify-content: center;
-        color: #444444;
+        align-items: center;
       }
     
       .pub-counter-items span {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 8px;
+        background: #f5f5f5;
+        font-size: 15px;
+        color: #333333;
         white-space: nowrap;
-      }
-    
-      @media screen and (max-width: 768px) {
-        .pub-counter-floating {
-          position: static;
-          margin: 12px auto 18px auto;
-          width: fit-content;
-        }
       }
     </style>
     
 
   </head>
   <body>
-    <!-- Counter -->
-    <div class="pub-counter-floating" aria-label="Journal publication quartile summary">
-      <div class="pub-counter-title">Journal Publications</div>
-      <div class="pub-counter-items">
-        <span><strong>Q1</strong>: 1</span>
-        <span><strong>Q2</strong>: 2</span>
-      </div>
-    </div>
     <div class="wrapper">
       <header>
         
@@ -138,6 +125,13 @@
         </a> -->
         
         </div>
+        <div class="pub-counter-inline" aria-label="Journal publication quartile summary">
+            <div class="pub-counter-title">Journal Publications</div>
+            <div class="pub-counter-items">
+              <span><strong>Q1</strong>: 1</span>
+              <span><strong>Q2</strong>: 2</span>
+            </div>
+          </div>
         <br>
 
       </header>
