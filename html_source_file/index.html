@@ -24,10 +24,59 @@
     
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
+    <style>
+      .pub-counter-floating {
+        position: fixed;
+        top: 18px;
+        right: 22px;
+        z-index: 1000;
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 10px 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+        font-size: 13px;
+        line-height: 1.4;
+        text-align: center;
+      }
+    
+      .pub-counter-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #333333;
+      }
+    
+      .pub-counter-items {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        color: #444444;
+      }
+    
+      .pub-counter-items span {
+        white-space: nowrap;
+      }
+    
+      @media screen and (max-width: 768px) {
+        .pub-counter-floating {
+          position: static;
+          margin: 12px auto 18px auto;
+          width: fit-content;
+        }
+      }
+    </style>
     
 
   </head>
   <body>
+    <!-- Counter -->
+    <div class="pub-counter-floating" aria-label="Journal publication quartile summary">
+      <div class="pub-counter-title">Journal Publications</div>
+      <div class="pub-counter-items">
+        <span><strong>Q1</strong>: 1</span>
+        <span><strong>Q2</strong>: 2</span>
+      </div>
+    </div>
     <div class="wrapper">
       <header>
         
