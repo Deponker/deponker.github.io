@@ -171,23 +171,17 @@ develop generalizable visual learning methods for reliable perception and
 decision-making across real-world environments.
 </par> -->
 
-<h2 id="news">News</h2>
+        <!-- ==============================News=============================   -->
+          <h2>News</h2>
+          
+          <ul id="home-news-list">
+          </ul>
 
 
-<!-- ==============================News=============================   -->
 
 
-<ul>
-  <li><strong>[Jul. 2026]</strong> One Paper is Accepted at Engineering Reports.</li>
-  <li><strong>[Jan. 2026]</strong> Presented a poster at the Transportation Research Board (TRB) Annual Meeting.</li>
-  <li><strong>[Oct. 2025]</strong> Presented a poster at the Chattanooga Connect.</li>
-  <li><strong>[Nov. 2022]</strong> One Paper is Accepted at Computers in Biology and Medicine.</li>
-  <li><strong>[Dec. 2020]</strong> One Paper is Accepted at Tissue and Cell.</li>
-  
-  <!-- <li><strong>[Feb. 2020]</strong> We will host the ACM Multimedia Asia 2020 conference in Singapore!</li> -->
-  <!-- <li><strong>[Sept. 2019]</strong> Our paper about few-shot learning is accepted to NeurIPS 2019.</li> -->
-  <!-- <li><strong>[Mar. 2019]</strong> Our paper about few-shot learning is accepted to CVPR 2019.</li> -->
-</ul>
+
+
 
 <h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
 
@@ -334,6 +328,29 @@ decision-making across real-world environments.
       ga('create', 'UA-111540567-4', 'auto');
       ga('send', 'pageview');
     </script>
-    
+
+
+
+    <script>
+fetch('news.html')
+    .then(response => response.text())
+    .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        const newsItems = doc.querySelectorAll('#news-list li');
+        const homeNewsList = document.getElementById('home-news-list');
+
+        // Show latest 5 news items on homepage
+        newsItems.forEach((item, index) => {
+            if (index < 5) {
+                homeNewsList.appendChild(item.cloneNode(true));
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Could not load news:', error);
+    });
+</script>
   </body>
 </html>
