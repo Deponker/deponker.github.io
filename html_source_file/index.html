@@ -342,10 +342,8 @@ fetch('news.html')
         const homeNewsList = document.getElementById('home-news-list');
 
         // Show latest 5 news items on homepage
-        newsItems.forEach((item, index) => {
-            if (index < 5) {
-                homeNewsList.appendChild(item.cloneNode(true));
-            }
+        newsItems.forEach((item) => {
+            homeNewsList.appendChild(item.cloneNode(true));
         });
     })
     .catch(error => {
